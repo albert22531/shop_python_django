@@ -11,3 +11,11 @@ Django Baptiste Darthenay
 
 Black Formater
  
+
+Создание Fixture - для БД (класс совпадает с моделью в json)
+dumpdata goods.Products > fixtures/goods/prod.json
+
+выгрузка в БД:
+manage.py migrate
+createsuperuser
+loaddata fixtures/...
