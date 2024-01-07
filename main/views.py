@@ -1,18 +1,22 @@
 from re import M
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template.defaulttags import lorem
 
 def index(request):
     context = {
         'title': 'Home',
-        'content': 'Главная страница - Home',
-        'list': ['first', 'second'],
-        'dict': {'first': 1},
-        'is_authenticated': False
+        'content': 'Магазин мебели HOME'
     }
 
 
     return render(request, 'main/index.html', context)
 
 def about(request):
-    return HttpResponse('About page')
+    context = {
+        'title': 'Hoe - о нас',
+        'content': 'О нас',
+        'text_on_page': 'Текст ни очё и обо всём, только о нас и как у нас отлично'
+    }
+
+    return render (request, 'main/about.html', context)
